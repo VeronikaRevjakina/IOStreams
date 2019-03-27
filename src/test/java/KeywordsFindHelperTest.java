@@ -16,4 +16,10 @@ public class KeywordsFindHelperTest {
         String word="umbrella";
         assertTrue(!KeywordsFindHelper.isJavaKeyword(word));
     }
+
+    @Test
+    public void isJavaKeywordShouldReturnFalseForEmptyString(){
+        String word="";
+        assertTrue(!KeywordsFindHelper.isJavaKeyword(word));
+    }
 }

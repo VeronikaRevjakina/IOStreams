@@ -9,10 +9,10 @@ import java.io.*;
 public class TextStreamsTest {
     @Test
     public void readAndWriteJavaKeywordsUsingTextStreamsShouldReturn3() {
-        TextStreams.readAndWriteJavaKeywordsUsingTextStreams("C:/Users/вероника/Documents/Epam/in.txt",
-                "C:/Users/вероника/Documents/Epam/writer.txt");
+        TextStreams.readAndWriteJavaKeywordsUsingTextStreams("src/main/resources/in.txt",
+                "src/main/resources/writer.txt");
         try (BufferedReader bufferedReader = new BufferedReader(new FileReader
-                (new File("C:/Users/вероника/Documents/Epam/writer.txt")))) {
+                (new File("src/main/resources/writer.txt")))) {
             String[] resultWords = bufferedReader.readLine().split(" ");
             assertEquals(resultWords[0], "public");
             assertEquals(resultWords[1], "short");
@@ -29,10 +29,10 @@ public class TextStreamsTest {
 
     @Test
     public void readAndWriteJavaKeywordsUsingTextStreamsShouldReturn0(){
-        TextStreams.readAndWriteJavaKeywordsUsingTextStreams("C:/Users/вероника/Documents/Epam/empty.txt",
-                "C:/Users/вероника/Documents/Epam/out3.txt");
+        TextStreams.readAndWriteJavaKeywordsUsingTextStreams("src/main/resources/empty.txt",
+                "src/main/resources/emptyWriter.txt");
         try (BufferedReader bufferedReader = new BufferedReader(new FileReader
-                (new File("C:/Users/вероника/Documents/Epam/out3.txt")))){
+                (new File("src/main/resources/emptyWriter.txt")))){
             String[] resultWords=bufferedReader.readLine().split(" ");
             assertEquals(resultWords[0],"0");
 

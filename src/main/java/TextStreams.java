@@ -2,10 +2,10 @@ package main.java;
 import java.io.*;
 
 public class TextStreams {
-    public static void main(String[] args){
-        readAndWriteJavaKeywordsUsingTextStreams("C:/Users/вероника/Documents/Epam/BinarySearch.txt",
-        "C:/Users/вероника/Documents/Epam/writer.txt");
-    }
+  /* public static void main(String[] args){
+        readAndWriteJavaKeywordsUsingTextStreams("src/main/resources/in.txt",
+        "src/main/resources/writer.txt");
+    }*/
     public static void readAndWriteJavaKeywordsUsingTextStreams(String pathToInputFile,String pathToOutputFile){
 
         try( BufferedReader bufferedReader=
