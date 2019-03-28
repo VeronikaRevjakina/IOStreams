@@ -2,10 +2,7 @@ package main.java;
 import java.io.*;
 
 public class TextStreams {
-  /* public static void main(String[] args){
-        readAndWriteJavaKeywordsUsingTextStreams("src/main/resources/in.txt",
-        "src/main/resources/writer.txt");
-    }*/
+
     public static void readAndWriteJavaKeywordsUsingTextStreams(String pathToInputFile,String pathToOutputFile){
 
         try( BufferedReader bufferedReader=
@@ -23,12 +20,9 @@ public class TextStreams {
                         bufferedWriter.write(word);
                         bufferedWriter.write(" ");
                     }
-                    ;
                 }
 
-
             }
-
             bufferedWriter.write(String.valueOf(count));
         }
         catch(FileNotFoundException f){

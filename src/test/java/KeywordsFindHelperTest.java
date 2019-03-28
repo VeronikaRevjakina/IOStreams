@@ -3,6 +3,7 @@ import org.junit.Test;
 import main.java.KeywordsFindHelper;
 
 import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.assertFalse;
 
 public class KeywordsFindHelperTest {
     @Test
@@ -14,12 +15,12 @@ public class KeywordsFindHelperTest {
     @Test
     public void isJavaKeywordShouldReturnFalse(){
         String word="umbrella";
-        assertTrue(!KeywordsFindHelper.isJavaKeyword(word));
+        assertFalse(KeywordsFindHelper.isJavaKeyword(word));
     }
 
     @Test
     public void isJavaKeywordShouldReturnFalseForEmptyString(){
         String word="";
-        assertTrue(!KeywordsFindHelper.isJavaKeyword(word));
+        assertFalse(KeywordsFindHelper.isJavaKeyword(word));
     }
 }
