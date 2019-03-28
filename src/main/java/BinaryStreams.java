@@ -15,10 +15,10 @@ public class BinaryStreams {
             byte[] tempByteArray=new byte[(int)( new File(pathToInputFile)).length()];
             bufferedInputStream.read(tempByteArray);
             String [] wordsArray = (new String(tempByteArray)).split(" ");
-            for(int i=0;i<wordsArray.length;i++){
-                if(  KeywordsFindHelper.isJavaKeyword(wordsArray[i])){
+            for(String word: wordsArray){
+                if(  KeywordsFindHelper.isJavaKeyword(word)){
                     count++;
-                    bufferedOutputStream.write( wordsArray[i].getBytes());
+                    bufferedOutputStream.write( word.getBytes());
                     bufferedOutputStream.write( " ".getBytes());
                 };
             }
