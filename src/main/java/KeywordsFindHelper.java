@@ -15,7 +15,7 @@ public class KeywordsFindHelper {
 
 
     public static boolean isJavaKeyword(String word) {
-        return (listKeywords.contains(word)) ? true : false;
+        return listKeywords.contains(word);
 
     }
 }
