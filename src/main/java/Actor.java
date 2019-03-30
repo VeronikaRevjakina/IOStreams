@@ -3,7 +3,7 @@ package main.java;
 import java.util.Date;
 
 
-public class Actor {
+public class Actor implements java.io.Serializable{
 
     private String name;
     private String surname;
