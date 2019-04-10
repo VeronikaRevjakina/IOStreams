@@ -1,9 +1,10 @@
 package main.java;
 
 import java.util.Date;
+import java.io.Serializable;
 
 
-public class Actor implements java.io.Serializable{
+public class Actor implements Serializable{
 
     private String name;
     private String surname;
@@ -55,24 +56,28 @@ public class Actor implements java.io.Serializable{
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || this.getClass() != o.getClass()) return false;
-
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
         Actor actor = (Actor) o;
 
-        if (!this.getName().equals(actor.getName())) return false;
-        if (!this.getSurname().equals(actor.getSurname())) return false;
+        if (getName() != null ? !getName().equals(actor.getName()) : actor.getName() != null) {
+            return false;
+        }
+        if (getSurname() != null ? !getSurname().equals(actor.getSurname()) : actor.getSurname() != null) {
+            return false;
+        }
         return getDateOfBirth() != null ? getDateOfBirth().equals(actor.getDateOfBirth()) : actor.getDateOfBirth() == null;
     }
 
     @Override
     public int hashCode() {
-        int result = name.hashCode();
-        result = 31 * result + surname.hashCode();
-        result = 31 * result + (dateOfBirth != null ? dateOfBirth.hashCode() : 0);
+        int result = getName() != null ? getName().hashCode() : 0;
+        result = 31 * result + (getSurname() != null ? getSurname().hashCode() : 0);
+        result = 31 * result + (getDateOfBirth() != null ? getDateOfBirth().hashCode() : 0);
         return result;
-
     }
-
-
 }

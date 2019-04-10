@@ -2,8 +2,9 @@ package main.java;
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.io.Serializable;
 
-public class FilmCollection implements java.io.Serializable {
+public class FilmCollection implements Serializable {
 
 
     public static List<Film> readCollectionFromFile(String pathToSerializedFile) {
@@ -12,17 +13,14 @@ public class FilmCollection implements java.io.Serializable {
 
         try(ObjectInputStream in =new ObjectInputStream(new FileInputStream(new File(pathToSerializedFile)))){
           filmsCollection=( ArrayList<Film>) in.readObject();
-        }
-        catch(FileNotFoundException f){
+        } catch(FileNotFoundException f){
             System.out.println("FileNotFoundException worked");
             f.printStackTrace();
-        }
-        catch(IOException exception) {
+        } catch(IOException exception) {
             System.out.println("IOException worked");
             exception.printStackTrace();
 
-        }
-        catch(ClassNotFoundException exception){
+        } catch(ClassNotFoundException exception){
             System.out.println("ClassNotFoundException worked");
             exception.printStackTrace();
         }
@@ -33,12 +31,10 @@ public class FilmCollection implements java.io.Serializable {
     public static void writeCollectionToFile(List<Film> filmsCollection,String pathToSerializedFile){
         try(ObjectOutputStream out=new ObjectOutputStream(new FileOutputStream(pathToSerializedFile))){
             out.writeObject(filmsCollection);
-        }
-        catch(FileNotFoundException f){
+        } catch(FileNotFoundException f){
             System.out.println("FileNotFoundException worked");
             f.printStackTrace();
-        }
-        catch(IOException exception) {
+        } catch(IOException exception) {
             System.out.println("IOException worked");
             exception.printStackTrace();
 

@@ -3,8 +3,9 @@ package main.java;
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
+import java.io.Serializable;
 
-public class Film implements java.io.Serializable {
+public class Film implements Serializable {
 
     private String title;
     private int yearOfRelease;
@@ -81,7 +82,7 @@ public class Film implements java.io.Serializable {
     }
 
     public void showAllActors(){
-        for(Object element: actors){
+        for(Actor element: actors){
             System.out.println(element);
         }
     }
